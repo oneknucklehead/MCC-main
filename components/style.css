@@ -1,0 +1,139 @@
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#main {
+  @apply grid place-items-center;
+  overflow-x: hidden;
+  @apply w-full h-[80vh] shadow-lg;
+}
+
+.item {
+  transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+}
+
+.item:nth-of-type(1),
+.item:nth-of-type(2) {
+  @apply w-full h-[80vh] top-0 left-0 transform-none rounded-none shadow-none;
+  opacity: 1;
+}
+
+.item:nth-of-type(3) {
+  left: 60%;
+}
+
+.item:nth-of-type(4) {
+  left: calc(60% + 220px);
+}
+
+.item:nth-of-type(5) {
+  left: calc(60% + 440px);
+}
+
+.item:nth-of-type(6) {
+  left: calc(60% + 660px);
+  opacity: 0;
+}
+
+.content {
+  @apply absolute w-[30vw] max-w-[450px] top-32 left-12 transform -translate-y-1/2 text-white opacity-0 hidden;
+}
+
+.item:nth-of-type(2) .content {
+  @apply block;
+  animation: show 0.75s ease-in-out 0.3s forwards;
+}
+
+.description {
+  max-width: 350px;
+}
+
+@keyframes show {
+  0% {
+    filter: blur(5px);
+    transform: translateY(calc(-50% + 75px));
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.nav .btn:hover {
+  @apply bg-opacity-30;
+}
+
+@media (min-width: 650px) and (max-width: 900px) {
+  .content .title {
+    font-size: 1rem;
+  }
+  .content .description {
+    font-size: 0.7rem;
+  }
+  .content button {
+    font-size: 0.7rem;
+  }
+  .item {
+    width: 160px;
+    height: 270px;
+  }
+  .item:nth-of-type(3) {
+    left: 50%;
+  }
+  .item:nth-of-type(4) {
+    left: calc(50% + 170px);
+  }
+  .item:nth-of-type(5) {
+    left: calc(50% + 340px);
+  }
+  .item:nth-of-type(6) {
+    left: calc(50% + 510px);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  .content .title {
+    font-size: 0.9rem;
+  }
+  .content .description {
+    font-size: 0.65rem;
+  }
+  .content button {
+    font-size: 0.7rem;
+  }
+  .item {
+    width: 130px;
+    height: 220px;
+  }
+  .item:nth-of-type(3) {
+    left: 50%;
+  }
+  .item:nth-of-type(4) {
+    left: calc(50% + 140px);
+  }
+  .item:nth-of-type(5) {
+    left: calc(50% + 280px);
+  }
+  .item:nth-of-type(6) {
+    left: calc(50% + 420px);
+    opacity: 0;
+  }
+}
+
+.calendar {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 800px;
+  height: 450px;
+}
+
+.calendar .leftCol {
+  width: 40%;
+}
+
+.calendar .rightCol {
+  width: 60%;
+}
