@@ -117,7 +117,7 @@ const Home: React.FC = () => {
                 objectFit: "cover",
               }}
             >
-              <div className="content absolute w-[80%] max-w-[15rem] top-0 left-[10%] transform -translate-y-1/2 text-white">
+              <div className="content absolute w-[80%] max-w-[15rem] mt-7 left-[10%] transform -translate-y-1/2 text-white">
                 <h2 className="title font-extralight text-3xl sm:text-4xl md:text-5xl uppercase">
                   {item.title}
                 </h2>
