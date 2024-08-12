@@ -108,108 +108,108 @@ const Home: React.FC = () => {
                 "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
               image: six.src,
             },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: sev.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: eight.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: nine.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: ten.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: elev.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: twel.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: thirteen.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: fourteen.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: fifteen.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: sixteen.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: seventeen.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: eighteen.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: nineteen.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: twenty.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: twentyone.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: twentytwo.src,
-            },
-            {
-              title: "The Migration",
-              description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-              image: twentythree.src,
-            },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: sev.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: eight.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: nine.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: ten.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: elev.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: twel.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: thirteen.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: fourteen.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: fifteen.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: sixteen.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: seventeen.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: eighteen.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: nineteen.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: twenty.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: twentyone.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: twentytwo.src,
+            // },
+            // {
+            //   title: "The Migration",
+            //   description:
+            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+            //   image: twentythree.src,
+            // },
           ].map((item, index) => (
             <li
               key={index}
