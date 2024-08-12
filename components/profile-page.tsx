@@ -10,8 +10,8 @@ import axios from "axios";
 export default function ProfilePage() {
   const [userData, setUserData] = useState();
   const [formData, setFormData] = useState({
-    email: "mccblrwork@gmail.com ",
-    password: "ABCD1234",
+    email: "kavya.k8@gmail.com",
+    password: "Sway014_san032",
   });
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
 
@@ -19,10 +19,7 @@ export default function ProfilePage() {
     try {
       const response = await axios.post(
         "https://api.mcc-alumni.snaplogix.in/auth/login",
-        {
-          email: "mccblrwork@gmail.com",
-          password: "Sway014_san032",
-        }
+        formData
       );
       console.log(response);
 
@@ -56,9 +53,16 @@ export default function ProfilePage() {
       }
     }
   };
-  // useEffect(() => {
-  //   login();
-  // });
+  useEffect(() => {
+    const login = async () => {
+      const response = await axios.post(
+        "https://api.mcc-alumni.snaplogix.in/auth/login",
+        formData
+      );
+      console.log(response);
+    };
+    login();
+  }, []);
   return (
     <div className="bg-white w-full h-[100vh] mt-24">
       <div className="flex m-5 mt-0 justify-between">
@@ -67,7 +71,6 @@ export default function ProfilePage() {
             <Image src={back} alt="back_btn" className="w-6 h-6 mr-2" />
             <p>Back</p>
           </button>
-          {/* <button onClick={() => login()}>click</button> */}
           <Image
             src={Dprofile}
             alt="Defalut Profile"

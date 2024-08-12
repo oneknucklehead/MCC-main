@@ -68,9 +68,9 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <div id="main" className="relative shadow-lg mt-[10vh]">
+      <div id="main" className="relative shadow-lg mt-[12vh]">
         <ScrollButton />
-        <ul className="slider relative w-full h-[80vh]">
+        <ul className="slider relative w-full h-full flex flex-row gap-4 ">
           {[
             {
               title: "Lossless Youths",
@@ -108,129 +108,47 @@ const Home: React.FC = () => {
                 "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
               image: six.src,
             },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: sev.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: eight.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: nine.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: ten.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: elev.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: twel.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: thirteen.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: fourteen.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: fifteen.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: sixteen.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: seventeen.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: eighteen.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: nineteen.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: twenty.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: twentyone.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: twentytwo.src,
-            // },
-            // {
-            //   title: "The Migration",
-            //   description:
-            //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
-            //   image: twentythree.src,
-            // },
           ].map((item, index) => (
             <li
               key={index}
-              className="item absolute w-[200px] h-[260px] list-none top-[50vh] transform -translate-y-1 z-10 bg-cover bg-center rounded-[8px] shadow-inner transition-transform duration-200"
+              className="item absolute w-[11.5vw] h-[28vh] list-none top-[80%] transform -translate-y-1/2 z-10 bg-cover bg-center rounded-[8px] shadow-inner transition-transform duration-200"
               style={{
                 backgroundImage: `url(${item.image})`,
                 objectFit: "cover",
               }}
             >
-              <div className="content absolute w-[30vw] max-w-[2rem] top-0 left-12 transform -translate-y-1 text-white">
-                <h2 className="title font-extralight text-5xl uppercase">
+              <div className="content absolute w-[80%] max-w-[15rem] top-0 left-[10%] transform -translate-y-1/2 text-white">
+                <h2 className="title font-extralight text-3xl sm:text-4xl md:text-5xl uppercase">
                   {item.title}
                 </h2>
-                <p className="description leading-[1.7] mt-4 mb-6 text-xs">
+                <p className="description leading-[1.7] mt-4 mb-6 text-sm sm:text-base">
                   {item.description}
                 </p>
-                <button className="flex bg-none text-xs items-center bg-zinc-600 border border-zinc-400 rounded-md p-3 text-white">
+                <button className="flex bg-none text-sm sm:text-base items-center bg-zinc-600 border border-zinc-400 rounded-md p-3 text-white">
                   Read More
                 </button>
               </div>
             </li>
+            // <li
+            //   key={index}
+            //   className="item absolute w-[200px] h-[260px] list-none top-[50vh] transform -translate-y-1 z-10 bg-cover bg-center rounded-[8px] shadow-inner transition-transform duration-200"
+            //   style={{
+            //     backgroundImage: `url(${item.image})`,
+            //     objectFit: "cover",
+            //   }}
+            // >
+            //   <div className="content absolute w-[30vw] max-w-[2rem] top-0 left-12 transform -translate-y-1 text-white">
+            //     <h2 className="title font-extralight text-5xl uppercase">
+            //       {item.title}
+            //     </h2>
+            //     <p className="description leading-[1.7] mt-4 mb-6 text-xs">
+            //       {item.description}
+            //     </p>
+            //     <button className="flex bg-none text-xs items-center bg-zinc-600 border border-zinc-400 rounded-md p-3 text-white">
+            //       Read More
+            //     </button>
+            //   </div>
+            // </li>
           ))}
         </ul>
         <nav className="nav absolute bottom-8 left-32 transform -translate-x-1/2 z-10 select-none">
@@ -273,7 +191,6 @@ const Home: React.FC = () => {
       </h1>
       <div className="flex">
         <Sec2Land />
-
         <Calender />
       </div>
       {/* CAROUSEL */}
