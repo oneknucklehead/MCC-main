@@ -68,7 +68,7 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <div id="main" className="relative shadow-lg mt-[12vh]">
+      <div id="main" className="relative shadow-lg mt-[11vh]">
         <ScrollButton />
         <ul className="slider relative w-full h-full flex flex-row gap-4 ">
           {[

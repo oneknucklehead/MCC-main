@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#004225] fixed top-0 w-full z-50">
+    <nav className="bg-[#004225] fixed h-24 top-0 w-full z-50">
       <div className="flex justify-between items-center ml-8 mr-20">
         <a href="/">
           <Image src={MCC_logo} alt="MCC logo" className="p-6 w-[44vw]" />
