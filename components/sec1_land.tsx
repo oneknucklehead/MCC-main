@@ -189,9 +189,13 @@ const Home: React.FC = () => {
       <h1 className="pt-20 pb-8 text-4xl font-semibold text-center">
         Welcome to the MCC Alumni portal
       </h1>
-      <div className="flex">
-        <Sec2Land />
-        <Calender />
+      <div className="grid grid-cols-3">
+        <div className="col-span-2">
+          <Sec2Land />
+        </div>
+        <div className="col-span-1">
+          <Calender />
+        </div>
       </div>
       {/* CAROUSEL */}
       <div className="my-8">

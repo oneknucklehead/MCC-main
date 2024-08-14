@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import img1 from "@/assets/slider_img/out_slider/File_1.jpeg";
 import img2 from "@/assets/slider_img/out_slider/File_2.jpeg";
 import img3 from "@/assets/slider_img/out_slider/File_3.jpeg";
+import logo from "@/assets/mcc_logo.svg";
 import Image from "next/image";
 import Slider from "@/components/Slider";
 
@@ -85,11 +86,9 @@ const Signup: React.FC = () => {
 
   return (
     <div className="bg-black text-white flex flex-col h-screen">
-      <header className="flex justify-between items-center p-5 bg-[#002f1c] text-white h-24 border-b-2 border-white shadow-[0_0_10px_rgba(255,215,0,0.5)]">
-        <div className="flex items-center">
-          <img src="/placeholder-logo.png" alt="Logo" className="h-16 mr-4" />
-          <h1 className="text-xl">Your Logo</h1>
-        </div>
+      <header className="flex w-full justify-between items-center p-5 bg-[#002f1c] text-white h-24 border-b-2 border-white shadow-[0_0_10px_rgba(255,215,0,0.5)]">
+        {/* <Image src={logo} alt="Logo" className="h-[3vw]" /> */}
+        <div>Your logo</div>
         <nav className="flex items-center">
           <a
             href="/signup"

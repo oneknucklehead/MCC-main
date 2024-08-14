@@ -26,125 +26,125 @@ const teamMembers: TeamMember[] = [
     designation: "Designer",
     otherInfo: "Specialist in UI/UX design",
   },
-  {
-    id: 1,
-    image: Image1,
-    name: "John Doe",
-    designation: "Developer",
-    otherInfo: "Expert in JavaScript and React",
-  },
-  {
-    id: 2,
-    image: Image2,
-    name: "Jane Smith",
-    designation: "Designer",
-    otherInfo: "Specialist in UI/UX design",
-  },
-  {
-    id: 1,
-    image: Image1,
-    name: "John Doe",
-    designation: "Developer",
-    otherInfo: "Expert in JavaScript and React",
-  },
-  {
-    id: 2,
-    image: Image2,
-    name: "Jane Smith",
-    designation: "Designer",
-    otherInfo: "Specialist in UI/UX design",
-  },
-  {
-    id: 1,
-    image: Image1,
-    name: "John Doe",
-    designation: "Developer",
-    otherInfo: "Expert in JavaScript and React",
-  },
-  {
-    id: 2,
-    image: Image2,
-    name: "Jane Smith",
-    designation: "Designer",
-    otherInfo: "Specialist in UI/UX design",
-  },
-  {
-    id: 1,
-    image: Image1,
-    name: "John Doe",
-    designation: "Developer",
-    otherInfo: "Expert in JavaScript and React",
-  },
-  {
-    id: 1,
-    image: Image1,
-    name: "John Doe",
-    designation: "Developer",
-    otherInfo: "Expert in JavaScript and React",
-  },
-  {
-    id: 2,
-    image: Image2,
-    name: "Jane Smith",
-    designation: "Designer",
-    otherInfo: "Specialist in UI/UX design",
-  },
-  {
-    id: 1,
-    image: Image1,
-    name: "John Doe",
-    designation: "Developer",
-    otherInfo: "Expert in JavaScript and React",
-  },
-  {
-    id: 2,
-    image: Image2,
-    name: "Jane Smith",
-    designation: "Designer",
-    otherInfo: "Specialist in UI/UX design",
-  },
-  {
-    id: 1,
-    image: Image1,
-    name: "John Doe",
-    designation: "Developer",
-    otherInfo: "Expert in JavaScript and React",
-  },
-  {
-    id: 2,
-    image: Image2,
-    name: "Jane Smith",
-    designation: "Designer",
-    otherInfo: "Specialist in UI/UX design",
-  },
-  {
-    id: 1,
-    image: Image1,
-    name: "John Doe",
-    designation: "Developer",
-    otherInfo: "Expert in JavaScript and React",
-  },
-  {
-    id: 2,
-    image: Image2,
-    name: "Jane Smith",
-    designation: "Designer",
-    otherInfo: "Specialist in UI/UX design",
-  },
-  {
-    id: 1,
-    image: Image1,
-    name: "John Doe",
-    designation: "Developer",
-    otherInfo: "Expert in JavaScript and React",
-  },
+  // {
+  //   id: 1,
+  //   image: Image1,
+  //   name: "John Doe",
+  //   designation: "Developer",
+  //   otherInfo: "Expert in JavaScript and React",
+  // },
+  // {
+  //   id: 2,
+  //   image: Image2,
+  //   name: "Jane Smith",
+  //   designation: "Designer",
+  //   otherInfo: "Specialist in UI/UX design",
+  // },
+  // {
+  //   id: 1,
+  //   image: Image1,
+  //   name: "John Doe",
+  //   designation: "Developer",
+  //   otherInfo: "Expert in JavaScript and React",
+  // },
+  // {
+  //   id: 2,
+  //   image: Image2,
+  //   name: "Jane Smith",
+  //   designation: "Designer",
+  //   otherInfo: "Specialist in UI/UX design",
+  // },
+  // {
+  //   id: 1,
+  //   image: Image1,
+  //   name: "John Doe",
+  //   designation: "Developer",
+  //   otherInfo: "Expert in JavaScript and React",
+  // },
+  // {
+  //   id: 2,
+  //   image: Image2,
+  //   name: "Jane Smith",
+  //   designation: "Designer",
+  //   otherInfo: "Specialist in UI/UX design",
+  // },
+  // {
+  //   id: 1,
+  //   image: Image1,
+  //   name: "John Doe",
+  //   designation: "Developer",
+  //   otherInfo: "Expert in JavaScript and React",
+  // },
+  // {
+  //   id: 1,
+  //   image: Image1,
+  //   name: "John Doe",
+  //   designation: "Developer",
+  //   otherInfo: "Expert in JavaScript and React",
+  // },
+  // {
+  //   id: 2,
+  //   image: Image2,
+  //   name: "Jane Smith",
+  //   designation: "Designer",
+  //   otherInfo: "Specialist in UI/UX design",
+  // },
+  // {
+  //   id: 1,
+  //   image: Image1,
+  //   name: "John Doe",
+  //   designation: "Developer",
+  //   otherInfo: "Expert in JavaScript and React",
+  // },
+  // {
+  //   id: 2,
+  //   image: Image2,
+  //   name: "Jane Smith",
+  //   designation: "Designer",
+  //   otherInfo: "Specialist in UI/UX design",
+  // },
+  // {
+  //   id: 1,
+  //   image: Image1,
+  //   name: "John Doe",
+  //   designation: "Developer",
+  //   otherInfo: "Expert in JavaScript and React",
+  // },
+  // {
+  //   id: 2,
+  //   image: Image2,
+  //   name: "Jane Smith",
+  //   designation: "Designer",
+  //   otherInfo: "Specialist in UI/UX design",
+  // },
+  // {
+  //   id: 1,
+  //   image: Image1,
+  //   name: "John Doe",
+  //   designation: "Developer",
+  //   otherInfo: "Expert in JavaScript and React",
+  // },
+  // {
+  //   id: 2,
+  //   image: Image2,
+  //   name: "Jane Smith",
+  //   designation: "Designer",
+  //   otherInfo: "Specialist in UI/UX design",
+  // },
+  // {
+  //   id: 1,
+  //   image: Image1,
+  //   name: "John Doe",
+  //   designation: "Developer",
+  //   otherInfo: "Expert in JavaScript and React",
+  // },
 ];
 
 const TeamsPage = () => {
   return (
     <div className="container mx-auto py-8 mt-[10%]">
-      <h1 className="text-3xl font-bold text-center mb-8">Our Team</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <h1 className="text-3xl font-bold text-center mb-14">Office Bearers</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2  gap-8">
         {teamMembers.map((member) => (
           <div
             key={member.id}
@@ -153,7 +153,7 @@ const TeamsPage = () => {
             <img
               src={member.image.src}
               alt={member.name}
-              className="w-full h-48 object-contain bg-zinc-300"
+              className="w-full h-80 object-contain bg-zinc-300"
             />
             <div className="p-4">
               <h2 className="text-xl font-bold">{member.name}</h2>
