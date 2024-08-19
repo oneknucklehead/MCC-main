@@ -106,7 +106,7 @@ const Slider: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-[85vh] overflow-hidden">
+    <div className="relative w-full h-[90vh] overflow-hidden">
       <div className="flex items-center w-full h-full">
         {images.map((image, index) => (
           <div

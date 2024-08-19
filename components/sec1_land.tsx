@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import Image from "next/image";
-import one from "@/assets/slider_img/in_slider/Cul_Ah_7.jpeg";
+import one from "@/assets/slider_img/in_slider/CollegeLogo.png";
 import two from "@/assets/slider_img/in_slider/Cul_ah_66.jpeg";
 import three from "@/assets/slider_img/in_slider/EminentPersonality2.jpeg";
 import four from "@/assets/slider_img/in_slider/GoldenJubilee6.jpeg";
@@ -75,37 +75,37 @@ const Home: React.FC = () => {
             {
               title: "Lossless Youths",
               description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+                "Identified under the UGC Scheme as a College with Potential for Excellence (CPE) in 2006.",
               image: one.src,
             },
             {
               title: "Estrange Bond",
               description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+                "One of the first women’s colleges to be founded in 1944 in Trichur, Kerala, under Madras University",
               image: two.src,
             },
             {
               title: "The Gate Keeper",
               description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+                "On transferring and establishing its presence in Bangalore, it became one of the first women’s colleges in Karnataka, in 1948 affiliated to Mysore University.",
               image: three.src,
             },
             {
               title: "Last Trace Of Us",
               description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+                "Celebrated its Golden Jubilee in 1998, its academic excellence and noteworthy achievements.",
               image: four.src,
             },
             {
               title: "Urban Decay",
               description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+                "One of the first colleges in Bangalore to be granted affiliation by Bangalore University in 1964.",
               image: five.src,
             },
             {
               title: "The Migration",
               description:
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.",
+                "Honoured by the Rotary Club for “its service to the community, serving the noble cause of education.",
               image: six.src,
             },
           ].map((item, index) => (
@@ -210,7 +210,7 @@ const Home: React.FC = () => {
       </div>
       <div className="relative">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.554618889464!2d88.369616675998!3d22.52088763486236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02772ce2926b1d%3A0x233ed3fd41b96e0b!2sRash%20Behari%20Ave%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1723242943898!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.680599330093!2d77.5860741758574!3d12.992269214423185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1641a70ed907%3A0xa8a112f1da2049dd!2s58%2C%20Palace%20Rd%2C%20Abshot%20Layout%2C%20Vasanth%20Nagar%2C%20Bengaluru%2C%20Karnataka%20560051!5e0!3m2!1sen!2sin!4v1724080807259!5m2!1sen!2sin"
           className="w-full h-[100vh]"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -220,11 +220,19 @@ const Home: React.FC = () => {
             <Image src={one} alt="" className="" />
             <div className="p-8">
               <h3 className="text-4xl py-8">Contact Us</h3>
-              <p className="pb-8">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
-              </p>
+              <div className="my-4">
+                <h1 className="text-lg">Mount Carmel College</h1>
+                <p className="">
+                  No 58, Palace Road, Vasanthnagar, Bengaluru, Karnataka 560052
+                </p>
+              </div>
+              <p className="my-3">080 2226 1759</p>
+              <p className="my-3">080 2228 6386</p>
+              <div className="pb-8">
+                <a className="underline" href="mailto:alumnae@mccblr.edu.in ">
+                  alumnae@mccblr .edu.in
+                </a>
+              </div>
             </div>
           </div>
         </div>
