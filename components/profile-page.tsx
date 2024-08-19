@@ -8,22 +8,24 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function ProfilePage() {
-  const [userData, setUserData] = useState<string | null>({});
-  const [formData, setFormData] = useState({
-    email: "kavya.k8@gmail.com",
-    password: "Sway014_san032",
-  });
+  const [userData, setUserData] = useState<object | null>({});
+  // const [formData, setFormData] = useState({
+  //   email: "kavya.k8@gmail.com",
+  //   password: "Sway014_san032",
+  // });
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
 
-  const logout = async () => {
-    localStorage.removeItem("userData");
-    window.location.reload();
-  };
   useEffect(() => {
-    const userDataLocal = JSON.parse(localStorage.getItem("userData"));
-    console.log(userDataLocal);
+    const userDataLocal = localStorage.getItem("userData");
+
     if (userDataLocal) {
-      setUserData(userDataLocal);
+      try {
+        const parsedUserData = JSON.parse(userDataLocal);
+        setUserData(parsedUserData);
+        // console.log(parsedUserData);
+      } catch (error) {
+        console.error("Error parsing user data:", error);
+      }
     }
   }, []);
   return (

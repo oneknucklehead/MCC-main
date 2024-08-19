@@ -89,31 +89,34 @@ export function LoginForm() {
           // console.log(userData);
         }
       } catch (error) {
-        switch (error.response.status) {
-          case 200:
-            setResponseMessage("Login successful. Welcome back!");
-            console.log(error);
+        if (axios.isAxiosError(error)) {
+          const statusCode = error.response?.status;
+          switch (statusCode) {
+            case 200:
+              setResponseMessage("Login successful. Welcome back!");
+              console.log(error);
+              router.push("/land"); // Redirect to dashboard or desired page after login
+              break;
+            case 400:
+              setResponseMessage(
+                "Invalid request body. Missing email or password."
+              );
+              console.log(error);
 
-            router.push("/land"); // Redirect to dashboard or desired page after login
-            break;
-          case 400:
-            setResponseMessage(
-              "Invalid request body. Missing email or password."
-            );
-            console.log(error);
+              break;
+            case 404:
+              setResponseMessage("User does not exist.");
+              console.log(error);
 
-            break;
-          case 404:
-            setResponseMessage("User does not exist.");
-            console.log(error);
-
-            break;
-          default:
-            setResponseMessage(
-              "Unexpected error occurred. Please try again later."
-            );
-            console.log(error);
+              break;
+            default:
+              setResponseMessage(
+                "Unexpected error occurred. Please try again later."
+              );
+              console.log(error);
+          }
         }
+
         if (axios.isAxiosError(error)) {
           if (error.response) {
             setResponseMessage(`Error: ${error.response.data.message}`);
