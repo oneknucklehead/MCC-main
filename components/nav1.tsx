@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -7,11 +7,22 @@ import MCC_logo from "@/assets/mcc_logo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [userData, setUserData] = useState("");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  const logout = async () => {
+    localStorage.removeItem("userData");
+    window.location.assign("/login");
+  };
+  useEffect(() => {
+    const item = localStorage.getItem("userData");
+    if (item) {
+      setUserData(item);
+      console.log(setUserData);
+    }
+  });
   return (
     <nav className="bg-[#004225] fixed h-24 top-0 w-full z-50">
       <div className="flex justify-between items-center ml-8 mr-20">
@@ -36,9 +47,17 @@ const Navbar = () => {
             Store{" "}
           </Link>
 
-          <Link className="text-white" href="./profile">
+          <Link
+            className="text-white"
+            href={`${userData ? "./profile" : "./login"}`}
+          >
             Profile
           </Link>
+          {userData === "" ? null : (
+            <button className="text-white" onClick={() => logout()}>
+              Logout
+            </button>
+          )}
         </div>
         <div className="md:hidden">
           <button

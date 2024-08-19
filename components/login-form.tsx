@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 
 export function LoginForm() {
   const [step, setStep] = useState(1);
+  const [userData, setUserData] = useState(null);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -79,38 +80,56 @@ export function LoginForm() {
           "https://api.mcc-alumni.snaplogix.in/auth/login",
           formData
         );
-
-        switch (response.status) {
+        if (response.status === 200) {
+          setResponseMessage("Login successful. Welcome back!");
+          router.push("/land"); // Redirect to dashboard or desired page after login
+          console.log(response.data);
+          localStorage.setItem("userData", JSON.stringify(response.data));
+          // setUserData({ ...response.data });
+          // console.log(userData);
+        }
+      } catch (error) {
+        switch (error.response.status) {
           case 200:
             setResponseMessage("Login successful. Welcome back!");
+            console.log(error);
+
             router.push("/land"); // Redirect to dashboard or desired page after login
             break;
           case 400:
             setResponseMessage(
               "Invalid request body. Missing email or password."
             );
+            console.log(error);
+
             break;
           case 404:
             setResponseMessage("User does not exist.");
+            console.log(error);
+
             break;
           default:
             setResponseMessage(
               "Unexpected error occurred. Please try again later."
             );
+            console.log(error);
         }
-      } catch (error) {
         if (axios.isAxiosError(error)) {
           if (error.response) {
             setResponseMessage(`Error: ${error.response.data.message}`);
+            console.log(error);
           } else if (error.request) {
             setResponseMessage(
               "No response received from server. Please try again later."
             );
+            console.log(error);
           } else {
             setResponseMessage(`Error: ${error.message}`);
           }
+          console.log(error);
         } else {
           setResponseMessage(`An unexpected error occurred: ${error}`);
+          console.log(error);
         }
       }
     }

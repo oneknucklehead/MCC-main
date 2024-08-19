@@ -8,60 +8,23 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function ProfilePage() {
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState<string | null>({});
   const [formData, setFormData] = useState({
     email: "kavya.k8@gmail.com",
     password: "Sway014_san032",
   });
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
 
-  const login = async () => {
-    try {
-      const response = await axios.post(
-        "https://api.mcc-alumni.snaplogix.in/auth/login",
-        formData
-      );
-      console.log(response);
-
-      switch (response.status) {
-        case 200:
-          console.log("Login successful. Welcome back!");
-
-          break;
-        case 400:
-          console.log("Invalid request body. Missing email or password.");
-          break;
-        case 404:
-          console.log("User does not exist.");
-          break;
-        default:
-          console.log("Unexpected error occurred. Please try again later.");
-      }
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        if (error.response) {
-          setResponseMessage(`Error: ${error.response.data.message}`);
-        } else if (error.request) {
-          setResponseMessage(
-            "No response received from server. Please try again later."
-          );
-        } else {
-          setResponseMessage(`Error: ${error.message}`);
-        }
-      } else {
-        setResponseMessage(`An unexpected error occurred: ${error}`);
-      }
-    }
+  const logout = async () => {
+    localStorage.removeItem("userData");
+    window.location.reload();
   };
   useEffect(() => {
-    const login = async () => {
-      const response = await axios.post(
-        "https://api.mcc-alumni.snaplogix.in/auth/login",
-        formData
-      );
-      console.log(response);
-    };
-    login();
+    const userDataLocal = JSON.parse(localStorage.getItem("userData"));
+    console.log(userDataLocal);
+    if (userDataLocal) {
+      setUserData(userDataLocal);
+    }
   }, []);
   return (
     <div className="bg-white w-full h-[100vh] mt-24">
@@ -73,8 +36,8 @@ export default function ProfilePage() {
           </button>
           <Image
             src={Dprofile}
-            alt="Defalut Profile"
-            className="w-full p-8 bg-zinc-200 rounded-xl h-[26vh] mt-8 mb-8"
+            alt="Default Profile"
+            className="w-full p-8 rounded-full h-[35vh] mt-8 mb-8"
           />
           <div className="flex mb-2 pt-10 items-center text-black">
             <h4 className="font-semibold text-xl ">Intro</h4>
@@ -107,10 +70,15 @@ export default function ProfilePage() {
             <p className="text-black">Share</p>
           </button>
           <hr className="border-b-1 mt-6 border-zinc-300" />
-          <h2 className="text-6xl font-[100] mt-10 ml-2">Leokonda Mohith</h2>
-          <h4 className="text-xs font-bold mt-2 ml-2 mb-10 ">
-            Some other Text
+          <h2 className="text-6xl font-[100] mt-10 ml-2">
+            {userData?.studentName}
+          </h2>
+          <h4 className="text-xs font-bold mt-2 ml-2">
+            Registration Number: {userData?.regNumber}
           </h4>
+          <p className="text-xs mt-2 ml-2 mb-10 ">
+            Batch: {userData?.joiningBatch}
+          </p>
           <div className="flex mb-2 pt-16 items-center">
             <h4 className="font-semibold text-4xl ">Course</h4>
             <span className="ml-4">----------</span>
@@ -124,7 +92,7 @@ export default function ProfilePage() {
               />
               <div className="flex flex-col">
                 <b>ABC Course Name</b>
-                <p>Master of Science in something</p>
+                <p>{userData?.course}</p>
                 <p className="text-black font-semibold text-xs mt-4">
                   Year 2012 - 2026
                 </p>{" "}

@@ -118,13 +118,13 @@ const Slider: React.FC = () => {
             <Image
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full object-fill object-center"
+              className="w-full h-full object-contain object-center"
             />
           </div>
         ))}
       </div>
 
-      <div className="absolute bottom-4 right-4 flex space-x-8">
+      <div className="absolute bottom-4 left-[48%] flex space-x-8">
         <button onClick={prevSlide} className="px-1 rounded">
           <Image src={leftA} alt="" className="w-8 h-8" />
         </button>
