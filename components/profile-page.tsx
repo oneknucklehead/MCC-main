@@ -6,9 +6,22 @@ import cap from "@/assets/cap.svg";
 import share from "@/assets/share.svg";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+interface UserData {
+  studentName: string;
+  course: string;
+  city: string;
+  email: string;
+  homeState: string;
+  joiningBatch: string;
+  linkValidity: number;
+  password: string;
+  program: string;
+  regNumber: string;
+  typeLevel: string;
+  _id: string;
+}
 export default function ProfilePage() {
-  const [userData, setUserData] = useState<object | null>({});
+  const [userData, setUserData] = useState<UserData | null>(null);
   // const [formData, setFormData] = useState({
   //   email: "kavya.k8@gmail.com",
   //   password: "Sway014_san032",
@@ -20,9 +33,9 @@ export default function ProfilePage() {
 
     if (userDataLocal) {
       try {
-        const parsedUserData = JSON.parse(userDataLocal);
+        const parsedUserData: UserData = JSON.parse(userDataLocal);
         setUserData(parsedUserData);
-        // console.log(parsedUserData);
+        console.log(parsedUserData);
       } catch (error) {
         console.error("Error parsing user data:", error);
       }

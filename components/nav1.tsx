@@ -20,7 +20,6 @@ const Navbar = () => {
     const item = localStorage.getItem("userData");
     if (item) {
       setUserData(item);
-      console.log(setUserData);
     }
   });
   return (
