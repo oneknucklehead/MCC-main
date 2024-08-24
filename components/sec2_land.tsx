@@ -37,8 +37,8 @@ export default function ImageGrid() {
                 </h3>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
-                <h3 className="col-span-1 relative flex justify-center items-center text-2xl h-full text-center font-medium text-black xs:text-xl md:text-3xl">
-                  Team
+                <h3 className="col-span-1 relative flex justify-center items-center text-xl h-full text-center font-medium text-black xs:text-xl md:text-2xl">
+                  Archival magazine
                   <div className="absolute -right-[22px] z-10 rotate-90 h-0 w-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent  border-b-[15px] border-b-white"></div>
                 </h3>
                 <Link
@@ -47,7 +47,7 @@ export default function ImageGrid() {
                 >
                   <div className="relative flex flex-col overflow-hidden px-4 pb-4 pt-40">
                     <Image
-                      src={g2}
+                      src={g1}
                       alt=""
                       className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                     />
@@ -61,7 +61,7 @@ export default function ImageGrid() {
                 className="group relative flex flex-col justify-center items-center overflow-hidden flex-grow"
               >
                 <Image
-                  src={g1}
+                  src={g2}
                   alt=""
                   className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 />

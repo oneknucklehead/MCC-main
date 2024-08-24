@@ -35,6 +35,9 @@ const Navbar = () => {
           <Link className="text-white" href="./gallery">
             Gallery
           </Link>
+          <Link className="text-white" href="./about">
+            About Us
+          </Link>
           <Link className="text-white" href="./team">
             Team{" "}
           </Link>

@@ -72,12 +72,12 @@ const Home: React.FC = () => {
         <ScrollButton />
         <ul className="slider relative w-full h-full flex flex-row gap-4 ">
           {[
-            {
-              title: "Lossless Youths",
-              description:
-                "Identified under the UGC Scheme as a College with Potential for Excellence (CPE) in 2006.",
-              image: one.src,
-            },
+            // {
+            //   title: "Lossless Youths",
+            //   description:
+            //     "Identified under the UGC Scheme as a College with Potential for Excellence (CPE) in 2006.",
+            //   image: one.src,
+            // },
             {
               title: "Estrange Bond",
               description:
@@ -95,6 +95,7 @@ const Home: React.FC = () => {
               description:
                 "Celebrated its Golden Jubilee in 1998, its academic excellence and noteworthy achievements.",
               image: four.src,
+              // text: "black",
             },
             {
               title: "Urban Decay",
@@ -107,6 +108,7 @@ const Home: React.FC = () => {
               description:
                 "Honoured by the Rotary Club for “its service to the community, serving the noble cause of education.",
               image: six.src,
+              text: "black",
             },
           ].map((item, index) => (
             <li
@@ -118,10 +120,18 @@ const Home: React.FC = () => {
               }}
             >
               <div className="content absolute w-[80%] max-w-[15rem] mt-7 left-[10%] transform -translate-y-1/2 text-white">
-                <h2 className="title font-extralight text-3xl sm:text-4xl md:text-5xl uppercase">
+                <h2
+                  className={`title font-extralight text-3xl sm:text-4xl md:text-5xl uppercase ${
+                    item.text ? "text-" + item.text : "text-white"
+                  } `}
+                >
                   {item.title}
                 </h2>
-                <p className="description leading-[1.7] mt-4 mb-6 text-sm sm:text-base">
+                <p
+                  className={`description leading-[1.7] mt-4 mb-6 text-sm sm:text-base
+                  ${item.text ? "text-" + item.text : "text-white"}
+                  `}
+                >
                   {item.description}
                 </p>
                 <button className="flex bg-none text-sm sm:text-base items-center bg-zinc-600 border border-zinc-400 rounded-md p-3 text-white">
@@ -197,14 +207,19 @@ const Home: React.FC = () => {
           <Calender />
         </div>
       </div>
+      <div>
+        <h1 className="text-4xl text-center mt-16 mb-12">
+          Credit to MCC archives
+        </h1>
+      </div>
       {/* CAROUSEL */}
       <div className="my-8">
         <Slider />
       </div>
-      <div>
+      <div className="flex justify-center items-center">
         <iframe
           src="https://widgets.sociablekit.com/linkedin-page-posts/iframe/25444937"
-          width="100%"
+          width="75%"
           height="1000"
         ></iframe>
       </div>

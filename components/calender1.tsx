@@ -7,7 +7,15 @@ const addEvent = (date: Date, event: string) => {
 };
 
 const Calendar: React.FC = () => {
-  const [events, setEvents] = useState<{ [key: string]: string[] }>({}); // Store events for each date
+  const [events, setEvents] = useState<{ [key: string]: string[] }>({
+    "2024-8-2": ["Stauros"],
+    "2024-8-8": ["Cul Week"],
+    "2024-8-9": ["Cul Week"],
+    "2024-8-10": ["Cul Week"],
+    "2024-8-14": ["Independence Day Prayer Service"],
+    "2024-8-15": ["Independence day"],
+    "2024-8-21": ["CIA I for all UG and III Sem PG"],
+  }); // Store events for each date
   const [hoveredDate, setHoveredDate] = useState<string | null>(null); // Track which date is being hovered
 
   const currentDate = new Date();
@@ -51,6 +59,7 @@ const Calendar: React.FC = () => {
   // Handle adding an event to the date
   const handleAddEvent = (date: string) => {
     const eventName = prompt("Enter the event name:");
+    console.log(events);
     if (eventName) {
       setEvents((prevEvents) => {
         const newEvents = { ...prevEvents };
@@ -90,7 +99,7 @@ const Calendar: React.FC = () => {
               className="text-center border p-2 relative"
               onMouseOver={() => handleMouseOver(day)}
               onMouseOut={handleMouseOut}
-              onClick={() => handleAddEvent(dateKey)}
+              // onClick={() => handleAddEvent(dateKey)}
             >
               {day}
               {events[dateKey] && (
@@ -100,10 +109,10 @@ const Calendar: React.FC = () => {
               )}
 
               {hoveredDate === dateKey && events[dateKey] && (
-                <div className="absolute top-full left-0 bg-white border p-2 mt-2 shadow-lg z-10 w-full">
+                <div className="absolute top-full left-0 bg-white border p-2 mt-2 shadow-lg z-10 min-w-28 w-fit">
                   <ul>
                     {events[dateKey].map((event, index) => (
-                      <li key={index} className="mb-1">
+                      <li key={index} className="w-full mb-1">
                         {event}
                       </li>
                     ))}
