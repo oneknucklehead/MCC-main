@@ -39,7 +39,7 @@ const Navbar = () => {
             About Us
           </Link>
           <Link className="text-white" href="./team">
-            Team{" "}
+            Office bearers{" "}
           </Link>
           <Link
             className="text-white"

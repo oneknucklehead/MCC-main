@@ -38,7 +38,7 @@ export default function ImageGrid() {
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
                 <h3 className="col-span-1 relative flex justify-center items-center text-xl h-full text-center font-medium text-black xs:text-xl md:text-2xl">
-                  Archival magazine
+                  Office bearers
                   <div className="absolute -right-[22px] z-10 rotate-90 h-0 w-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent  border-b-[15px] border-b-white"></div>
                 </h3>
                 <Link
@@ -66,9 +66,9 @@ export default function ImageGrid() {
                   className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                 />
                 {/* <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div> */}
-                {/* <h3 className="z-10 text-2xl font-medium text-white absolute xs:text-xl md:text-3xl">
-                  Wines
-                </h3> */}
+                <h3 className="z-10 text-2xl font-medium text-white absolute xs:text-xl md:text-3xl">
+                  Archival magazine
+                </h3>
               </Link>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function ImageGrid() {
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
                 <h3 className="col-span-1 relative flex justify-center items-center text-2xl h-full text-center font-medium text-black xs:text-xl md:text-3xl">
-                  {/* Team */}
+                  Home
                   <div className="absolute -right-[22px] z-10 rotate-90 h-0 w-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent  border-b-[15px] border-b-white"></div>
                 </h3>
                 <Link

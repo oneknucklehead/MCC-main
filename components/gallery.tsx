@@ -73,10 +73,9 @@ export default function Gallery() {
 
   return (
     <div className="mt-32">
-      <div>
-        <h1 className="text-black pt-10 pb-16 text-center text-4xl">
-          Peak into our past
-        </h1>
+      <div className=" pt-10 pb-16 ">
+        <h1 className="text-black text-center text-4xl">Peak into our past</h1>
+        <h1 className="text-xl py-4 text-center">Credits to MCC archives</h1>
       </div>
       <div className="grid grid-cols-3 gap-4">
         {images.map((image, index) => (

@@ -33,6 +33,7 @@ import ScrollButton from "./ui/ScrollBtn";
 
 import "./style.css";
 import Slider from "./slider-new";
+import Link from "next/link";
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -134,9 +135,11 @@ const Home: React.FC = () => {
                 >
                   {item.description}
                 </p>
-                <button className="flex bg-none text-sm sm:text-base items-center bg-zinc-600 border border-zinc-400 rounded-md p-3 text-white">
-                  Read More
-                </button>
+                <Link href={"./about"}>
+                  <button className="flex bg-none text-sm sm:text-base items-center bg-zinc-600 border border-zinc-400 rounded-md p-3 text-white">
+                    Read More
+                  </button>
+                </Link>
               </div>
             </li>
             // <li
@@ -207,11 +210,11 @@ const Home: React.FC = () => {
           <Calender />
         </div>
       </div>
-      <div>
+      {/* <div>
         <h1 className="text-4xl text-center mt-16 mb-12">
           Credit to MCC archives
         </h1>
-      </div>
+      </div> */}
       {/* CAROUSEL */}
       <div className="my-8">
         <Slider />
