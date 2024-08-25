@@ -64,14 +64,13 @@ export default function ProfilePage() {
     }
   }, []);
 
-  const handleImageUpload = (e) => {
+  const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
     console.log("image upload");
-    console.log(e.target.files[0]);
-    const file = e.target.files[0];
-    if (file) {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
       const reader = new FileReader();
       reader.onloadend = () => {
-        const base64String = reader.result;
+        const base64String = reader.result as string;
         setImage(base64String);
         localStorage.setItem("uploadedImage", base64String); // Save to localStorage
       };
@@ -87,7 +86,7 @@ export default function ProfilePage() {
     );
     console.log(response);
   };
-  const handleIntroData = (e) => {
+  const handleIntroData = (e: ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.value.length <= maxChar) {
       setIntroData(e.target.value);
     }
@@ -101,10 +100,10 @@ export default function ProfilePage() {
       updatedUserData
     );
   };
-  const handleCityChange = (e) => {
+  const handleCityChange = (e: ChangeEvent<HTMLInputElement>) => {
     setCity(e.target.value);
   };
-  const handleCityChangeSubmit = async (e) => {
+  const handleCityChangeSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     const updatedUserData = { ...userData, city: city };
     console.log(updatedUserData);
     localStorage.setItem("userData", JSON.stringify(updatedUserData));
