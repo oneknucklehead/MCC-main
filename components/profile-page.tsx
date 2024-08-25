@@ -6,6 +6,7 @@ import cap from "@/assets/cap.svg";
 import share from "@/assets/share.svg";
 import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
 import axios from "axios";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 interface Qualification {
   // Define the structure for each object in furtherqualifications
   name: string;
@@ -163,7 +164,7 @@ export default function ProfilePage() {
             <div>
               {image ? (
                 <Image
-                  src={image}
+                  src={image as string}
                   alt="Uploaded"
                   width={300}
                   height={300}
