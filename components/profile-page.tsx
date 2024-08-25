@@ -4,12 +4,19 @@ import back from "@/assets/back1.svg";
 import Dfprofile from "@/assets/default-profile.svg";
 import cap from "@/assets/cap.svg";
 import share from "@/assets/share.svg";
-import { useEffect, useState } from "react";
+import { ChangeEvent, MouseEvent, useEffect, useState } from "react";
 import axios from "axios";
+interface Qualification {
+  // Define the structure for each object in furtherqualifications
+  name: string;
+  period: string;
+  type: string;
+}
 interface UserData {
   studentName: string;
   course: string;
   intro: string;
+  furtherqualifications: Qualification[];
   city: string;
   email: string;
   homeState: string;
@@ -195,7 +202,7 @@ export default function ProfilePage() {
             onChange={(e) => handleIntroData(e)}
           ></textarea>
           <p className="text-right text-xs">
-            {introData.length}/{maxChar}
+            {introData?.length}/{maxChar}
           </p>
           <div>
             <button
