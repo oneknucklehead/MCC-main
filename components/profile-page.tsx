@@ -9,6 +9,7 @@ import axios from "axios";
 interface UserData {
   studentName: string;
   course: string;
+  intro: string;
   city: string;
   email: string;
   homeState: string;
