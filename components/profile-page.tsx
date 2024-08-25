@@ -24,7 +24,7 @@ interface UserData {
 export default function ProfilePage() {
   const [userData, setUserData] = useState<UserData | null>(null);
   const [city, setCity] = useState<string | undefined>("");
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState<string | ArrayBuffer | null>(null);
   const [Dprofile, setDprofile] = useState(null);
   const maxChar = 1200;
   const [introData, setIntroData] = useState<string | undefined>("");
