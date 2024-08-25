@@ -76,6 +76,7 @@ export function LoginForm() {
     e.preventDefault();
     if (validatePassword()) {
       try {
+        console.log(formData);
         const response = await axios.post(
           "https://api.mcc-alumni.snaplogix.in/auth/login",
           formData
