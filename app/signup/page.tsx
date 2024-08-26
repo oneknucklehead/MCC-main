@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import MCC_logo from "@/assets/mcc_logo.svg"
 import img1 from "@/assets/slider_img/out_slider/File_1.jpeg";
 import img2 from "@/assets/slider_img/out_slider/File_2.jpeg";
 import img3 from "@/assets/slider_img/out_slider/File_3.jpeg";
@@ -88,7 +89,8 @@ const Signup: React.FC = () => {
     <div className="bg-black text-white flex flex-col h-screen">
       <header className="flex w-full justify-between items-center p-5 bg-[#002f1c] text-white h-24 border-b-2 border-white shadow-[0_0_10px_rgba(255,215,0,0.5)]">
         {/* <Image src={logo} alt="Logo" className="h-[3vw]" /> */}
-        <div>Your logo</div>
+        
+          <Image src={MCC_logo} alt="MCC logo" className="p-6 w-[44vw]" />
         <nav className="flex items-center">
           <a
             href="/signup"
