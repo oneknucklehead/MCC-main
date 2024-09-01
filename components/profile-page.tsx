@@ -225,6 +225,7 @@ export default function ProfilePage() {
           <h4 className="text-xs font-bold mt-2 ml-2">
             Registration Number: {userData?.regNumber}
           </h4>
+          <h4 className="text-xs mt-2 ml-2">Course: {userData?.course}</h4>
           <p className="text-xs mt-2 ml-2">Batch: {userData?.joiningBatch}</p>
           <div className="flex text-xs ml-2 gap-2 items-center">
             <p className="">City: </p>

@@ -1,22 +1,35 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import MCC_logo from "@/assets/mcc_logo.svg"
+import MCC_logo from "@/assets/mcc_logo.svg";
 import img1 from "@/assets/slider_img/out_slider/File_1.jpeg";
 import img2 from "@/assets/slider_img/out_slider/File_2.jpeg";
 import img3 from "@/assets/slider_img/out_slider/File_3.jpeg";
-import logo from "@/assets/mcc_logo.svg";
 import Image from "next/image";
 import Slider from "@/components/Slider";
+import { cn } from "@/lib/utils";
 
 import leftA from "@/assets/left.svg";
 import rightA from "@/assets/right.svg";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Signup: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [img1, img2, img3];
   const [progress, setProgress] = useState(0);
+  const [email, setEmail] = useState("");
+  const [regNumber, setRegNumber] = useState("");
+  const [responseMessage, setResponseMessage] = useState("");
+  const [errors, setErrors] = useState({
+    email: "",
+    regNumber: "",
+  });
+
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const router = useRouter();
 
   const slides = [
     {
@@ -32,6 +45,90 @@ const Signup: React.FC = () => {
       description: "Description for Slide 3",
     },
   ];
+
+  const validateEmailAndRegistration = () => {
+    let valid = true;
+    let newErrors = { email: "", regNumber: "" };
+
+    if (!email.trim()) {
+      newErrors.email = "Email is required";
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = "Email address is invalid";
+      valid = false;
+    }
+
+    if (!regNumber.trim()) {
+      newErrors.regNumber = "Registration number is required";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!validateEmailAndRegistration()) {
+      console.error("Invalid email address or registration number");
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "https://api.mcc-alumni.snaplogix.in/auth/first-signup",
+        {
+          email,
+          regNumber,
+        }
+      );
+
+      console.log(response.status);
+
+      switch (response.status) {
+        case 200:
+          setResponseMessage(
+            "Thank you! Please check your email for further steps of the signup process."
+          );
+          break;
+        case 400:
+          setResponseMessage(
+            "Bad request: Missing fields. Please ensure all required fields are filled."
+          );
+          break;
+        case 404:
+          setResponseMessage(
+            "Alumni not found or email mismatch. Please check your information and try again."
+          );
+          break;
+        default:
+          setResponseMessage(
+            "Unexpected error occurred. Please try again later."
+          );
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        if (error.response) {
+          setResponseMessage(`Error: ${error.response.data.message}`);
+        } else if (error.request) {
+          setResponseMessage(
+            "No response received from server. Please try again later."
+          );
+        } else {
+          setResponseMessage(`Error: ${error.message}`);
+        }
+      } else {
+        setResponseMessage(`An unexpected error occurred: ${error}`);
+      }
+      console.error(error);
+    }
+  };
+
+  const handleLoginClick = () => {
+    router.push("/login"); // Navigate to the login page
+  };
+
   const startSlider = () => {
     intervalRef.current = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -89,8 +186,8 @@ const Signup: React.FC = () => {
     <div className="bg-black text-white flex flex-col h-screen">
       <header className="flex w-full justify-between items-center p-5 bg-[#002f1c] text-white h-24 border-b-2 border-white shadow-[0_0_10px_rgba(255,215,0,0.5)]">
         {/* <Image src={logo} alt="Logo" className="h-[3vw]" /> */}
-        
-          <Image src={MCC_logo} alt="MCC logo" className="p-6 w-[44vw]" />
+
+        <Image src={MCC_logo} alt="MCC logo" className="p-6 w-[44vw]" />
         <nav className="flex items-center">
           <a
             href="/signup"
@@ -167,45 +264,82 @@ const Signup: React.FC = () => {
           </div>
           <div className="form-box bg-black bg-opacity-80 p-10 rounded-lg shadow-[0_0_10px_rgba(255,215,0,0.5)]">
             <h2 className="text-center text-lg mb-6">Sign Up</h2>
-            <form>
-              <label htmlFor="email" className="block mb-2">
-                Registered Email:
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="w-full mb-6 p-3 bg-[#333] text-white rounded border border-[#002f1c]"
-              />
+            <form onSubmit={handleFormSubmit}>
+              <LabelInputContainer className="mb-4 text-white">
+                <Label htmlFor="email" className=" text-white block mb-2">
+                  Registered Email:
+                </Label>
 
-              <label htmlFor="reg-number" className="block mb-2">
-                Registration Number:
-              </label>
-              <input
-                type="text"
-                id="reg-number"
-                name="reg-number"
-                required
-                className="w-full mb-6 p-3 bg-[#333] text-white rounded border border-[#002f1c]"
-              />
+                <Input
+                  type="email"
+                  placeholder="youremail@domain.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full mb-6 p-3 bg-[#333] text-white rounded border border-[#002f1c]"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email}</p>
+                )}
+              </LabelInputContainer>
+              <LabelInputContainer className="mb-4 pt-4">
+                <Label htmlFor="reg-number" className="text-white block mb-2">
+                  Registration Number:
+                </Label>
 
+                <Input
+                  type="text"
+                  id="reg-number"
+                  name="reg-number"
+                  placeholder="ex.xxx"
+                  value={regNumber}
+                  onChange={(e) => setRegNumber(e.target.value)}
+                  required
+                  className="w-full mb-6 p-3 bg-[#333] text-white rounded border border-[#002f1c]"
+                />
+                {errors.regNumber && (
+                  <p className="text-red-500 text-sm">{errors.regNumber}</p>
+                )}
+              </LabelInputContainer>
               <button
                 type="submit"
                 className="bg-[#28A745] text-white p-3 rounded w-full"
               >
                 Register
               </button>
+              {responseMessage && (
+                <p className="text-xs mt-4">{responseMessage}</p>
+              )}
             </form>
             <div className="login-message mt-6 text-center text-sm">
               Already have an account?{" "}
-              <a href="/login" className="text-blue-500 font-bold">
-                Log In
-              </a>
+              <button
+                type="button"
+                onClick={handleLoginClick}
+                className="text-blue-500 font-bold underline ml-2"
+              >
+                Log in
+              </button>
             </div>
           </div>
         </section>
       </main>
+    </div>
+  );
+};
+
+const LabelInputContainer = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div className={cn("flex flex-col space-y-2 w-full", className)}>
+      {children}
     </div>
   );
 };
