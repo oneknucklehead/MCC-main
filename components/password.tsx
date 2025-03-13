@@ -60,7 +60,7 @@ export function PasswordSetupForm() {
     if (validatePassword()) {
       try {
         const response = await axios.post(
-          "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/auth/set-password",
+          "https://api.mccalumni.org.in/auth/set-password",
           { userID, password: formData.password }
         );
 

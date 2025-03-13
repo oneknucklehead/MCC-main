@@ -51,7 +51,6 @@ export default function ProfilePage() {
         setUserData(parsedUserData);
         setCity(parsedUserData.city);
         setIntroData(parsedUserData.intro);
-        console.log(parsedUserData);
       } catch (error) {
         console.error("Error parsing user data:", error);
       }
@@ -82,10 +81,9 @@ export default function ProfilePage() {
   const updateButton = async () => {
     let updatedUserData = { ...userData, intro: "hello" };
     const response = await axios.post(
-      "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/user/update_profile",
+      "https://api.mccalumni.org.in/user/update_profile",
       updatedUserData
     );
-    console.log(response);
   };
   const handleIntroData = (e: ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.value.length <= maxChar) {
@@ -94,10 +92,9 @@ export default function ProfilePage() {
   };
   const handleChangedData = async () => {
     const updatedUserData = { ...userData, intro: introData };
-    console.log(updatedUserData);
     localStorage.setItem("userData", JSON.stringify(updatedUserData));
     const response = await axios.post(
-      "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/user/update_profile",
+      "https://api.mccalumni.org.in/user/update_profile",
       updatedUserData
     );
   };
@@ -106,14 +103,12 @@ export default function ProfilePage() {
   };
   const handleCityChangeSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     const updatedUserData = { ...userData, city: city };
-    console.log(updatedUserData);
     localStorage.setItem("userData", JSON.stringify(updatedUserData));
     const response = await axios.post(
-      "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/user/update_profile",
+      "https://api.mccalumni.org.in/user/update_profile",
       updatedUserData
     );
     console.log("city update");
-    console.log(response);
   };
   const courseData = [
     {

@@ -59,7 +59,7 @@ const Calendar: React.FC = () => {
   // Handle adding an event to the date
   const handleAddEvent = (date: string) => {
     const eventName = prompt("Enter the event name:");
-    console.log(events);
+
     if (eventName) {
       setEvents((prevEvents) => {
         const newEvents = { ...prevEvents };

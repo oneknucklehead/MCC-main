@@ -76,18 +76,19 @@ export function LoginForm() {
     e.preventDefault();
     if (validatePassword()) {
       try {
-        console.log(formData);
+
         const response = await axios.post(
-          "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/auth/login",
+          "https://api.mccalumni.org.in/auth/login",
           formData
         );
+
         if (response.status === 200) {
           setResponseMessage("Login successful. Welcome back!");
           router.push("/land"); // Redirect to dashboard or desired page after login
-          console.log(response.data);
+
           localStorage.setItem("userData", JSON.stringify(response.data));
           // setUserData({ ...response.data });
-          // console.log(userData);
+
         }
       } catch (error) {
         if (axios.isAxiosError(error)) {

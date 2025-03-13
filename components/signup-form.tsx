@@ -68,11 +68,9 @@ export function SignupForm() {
 
     try {
       const response = await axios.post(
-        "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/auth/first-signup",
+        "https://api.mccalumni.org.in/auth/first-signup",
         formData
       );
-
-      console.log(response.status);
 
       switch (response.status) {
         case 200:
