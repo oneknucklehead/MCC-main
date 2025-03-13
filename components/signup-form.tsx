@@ -68,7 +68,7 @@ export function SignupForm() {
 
     try {
       const response = await axios.post(
-        "https://api.mcc-alumni.snaplogix.in/auth/first-signup",
+        "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/auth/first-signup",
         formData
       );
 

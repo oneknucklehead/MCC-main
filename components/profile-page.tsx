@@ -82,7 +82,7 @@ export default function ProfilePage() {
   const updateButton = async () => {
     let updatedUserData = { ...userData, intro: "hello" };
     const response = await axios.post(
-      "https://api.mcc-alumni.snaplogix.in/user/update_profile",
+      "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/user/update_profile",
       updatedUserData
     );
     console.log(response);
@@ -97,7 +97,7 @@ export default function ProfilePage() {
     console.log(updatedUserData);
     localStorage.setItem("userData", JSON.stringify(updatedUserData));
     const response = await axios.post(
-      "https://api.mcc-alumni.snaplogix.in/user/update_profile",
+      "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/user/update_profile",
       updatedUserData
     );
   };
@@ -109,7 +109,7 @@ export default function ProfilePage() {
     console.log(updatedUserData);
     localStorage.setItem("userData", JSON.stringify(updatedUserData));
     const response = await axios.post(
-      "https://api.mcc-alumni.snaplogix.in/user/update_profile",
+      "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/user/update_profile",
       updatedUserData
     );
     console.log("city update");

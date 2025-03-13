@@ -78,7 +78,7 @@ export function LoginForm() {
       try {
         console.log(formData);
         const response = await axios.post(
-          "https://api.mcc-alumni.snaplogix.in/auth/login",
+          "https://ec2-13-127-95-181.ap-south-1.compute.amazonaws.com/auth/login",
           formData
         );
         if (response.status === 200) {
